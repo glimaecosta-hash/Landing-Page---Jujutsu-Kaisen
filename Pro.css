@@ -1,0 +1,365 @@
+/* --- CONFIGURAÇÕES GERAIS --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@400;600;800&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #120505; /* Fundo escuro premium */
+  color: #f5f5f5;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+#ponto-forte,
+#personagens,
+#frase {
+  scroll-margin-top: 100px;
+}
+
+/* --- HEADER / MENU (Moderno com Blur) --- */
+header {
+  position: fixed; /* Fixado no topo ao rolar a página */
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px 5%;
+  z-index: 100;
+  background: rgba(18, 5, 5, 0.7);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.interface {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.logo img {
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+.logo img:hover {
+  transform: scale(1.05);
+}
+
+.menu-desctop ul {
+  display: flex;
+  list-style-type: none;
+  gap: 30px;
+}
+
+.menu-desctop ul li a {
+  color: #b3b3b3;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 400;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.menu-desctop ul li a:hover {
+  color: #ff003c;
+}
+
+/* Linha decorativa no hover do menu */
+.menu-desctop ul li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: #ff003c;
+  transition: width 0.3s ease;
+}
+
+.menu-desctop ul li a:hover::after {
+  width: 100%;
+}
+
+.btn-contato button {
+  padding: 10px 24px;
+  font-size: 15px;
+  font-weight: 600;
+  background-color: #ff003c;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 0, 60, 0.3);
+}
+
+.btn-contato button:hover {
+  background-color: #e60036;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 0, 60, 0.5);
+}
+
+/* --- SEÇÃO HERO (TOPO) --- */
+.imagens-1 {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.title {
+  font-size: 5rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+  text-align: center;
+  z-index: 2;
+  padding: 0 20px;
+  animation: surgidoDaEsquerda 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.img-principal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  filter: brightness(35%) contrast(110%);
+  animation: surgidoDaDireita 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes surgidoDaDireita {
+  0% {
+    opacity: 0;
+    transform: scale(1.05) translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateX(0);
+  }
+}
+
+@keyframes surgidoDaEsquerda {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* --- SEÇÃO HISTÓRIA --- */
+.texto-Principal {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  max-width: 1100px;
+  margin: 100px auto;
+  padding: 40px;
+  border-radius: 16px;
+}
+
+.paragrafo-1 {
+  flex: 1;
+  font-size: 18px;
+  line-height: 1.8;
+  color: #ccc;
+}
+
+.imagens-2 {
+  width: 380px;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* --- PONTOS FORTES --- */
+.caracteris {
+  max-width: 1100px;
+  margin: 100px auto;
+  background: linear-gradient(90deg, rgba(255, 0, 60, 0.1) 0%, rgba(0,0,0,0) 100%);
+  border-left: 4px solid #ff003c;
+  padding: 40px;
+  border-radius: 0 16px 16px 0;
+}
+
+.titulo {
+  margin-bottom: 30px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: white;
+}
+
+.listas-fortes {
+  list-style-type: none;
+}
+
+.listas-fortes li {
+  margin-bottom: 20px;
+  line-height: 1.7;
+  font-size: 16px;
+  color: #ddd;
+  position: relative;
+  padding-left: 25px;
+}
+
+/* Marcador personalizado moderno */
+.listas-fortes li::before {
+  content: "✦";
+  position: absolute;
+  left: 0;
+  color: #ff003c;
+  font-weight: bold;
+}
+
+.listas-fortes li strong {
+  color: white;
+  font-size: 17px;
+}
+
+/* --- SEÇÃO PERSONAGENS --- */
+.h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  text-align: center;
+  margin: 100px 0 40px 0;
+}
+
+.container-cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  padding: 20px max(5%, 20px);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card-personagem {
+  background-color: #1a1a1a;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  overflow: hidden;
+  width: 320px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: flex;
+  flex-direction: column;
+}
+
+.card-personagem:hover {
+  transform: translateY(-12px);
+  border-color: rgba(255, 0, 60, 0.4);
+  box-shadow: 0 15px 35px rgba(255, 0, 60, 0.15);
+}
+
+/* CORREÇÃO E MODERNIZAÇÃO DA IMAGEM DO CARD */
+.card-personagem .img-container {
+  width: 100%;
+  height: 380px;
+  overflow: hidden;
+}
+
+.card-personagem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.card-personagem:hover img {
+  transform: scale(1.08);
+}
+
+.info-card {
+  padding: 25px;
+  text-align: center;
+  background: #1a1a1a;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.info-card h4 {
+  margin-bottom: 10px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 22px;
+  color: white;
+}
+
+.info-card p {
+  font-size: 14px;
+  color: #999;
+  line-height: 1.6;
+}
+
+/* --- FRASE MARCANTE --- */
+.frase-Marcante {
+  max-width: 800px;
+  margin: 100px auto;
+  text-align: center;
+  padding: 40px 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.texto-5 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #ff003c;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+}
+
+.ultimo-texto {
+  font-size: 22px;
+  font-style: italic;
+  line-height: 1.6;
+  color: #e5e5e5;
+}
+
+/* --- RESPONSIVIDADE (MOBILE-FRIENDLY) --- */
+@media (max-width: 900px) {
+  .texto-Principal {
+    flex-direction: column;
+    text-align: center;
+    margin: 60px 20px;
+    padding: 30px 20px;
+  }
+  .imagens-2 {
+    width: 100%;
+    max-width: 400px;
+  }
+  .title {
+    font-size: 3.2rem;
+  }
+  .menu-desctop {
+    display: none; /* Em um cenário real, aqui entraria um menu hamburguer */
+  }
+}
